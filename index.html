@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equilibra · Nutrição, Psicologia e Movimento</title>
+<meta name="description" content="Programa online de 3 meses com Sara Lucas e Lisa Bompastor. Mais do que perder peso: cuidar da saúde como um todo. 1.ª edição de 10 de fevereiro a 10 de maio de 2027.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Equilibra · Mais do que perder peso.">
+<meta property="og:description" content="Programa online de 3 meses com Sara Lucas e Lisa Bompastor: Nutrição, Psicologia e Movimento. 1.ª edição de 10 de fevereiro a 10 de maio de 2027.">
+<meta property="og:image" content="https://pedalexsilva.github.io/equilibra-site/img/grupo-circulo.jpg">
+<meta property="og:url" content="https://pedalexsilva.github.io/equilibra-site/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/lotus.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { sans: ['"Albert Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+      colors: {
+        noite: '#120d0a',
+        ouro: '#EAC696',
+        terra: '#C9824F',
+        sara: '#9DB59A',
+      }
+    }}
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-title {
+    background: linear-gradient(135deg, #ffffff 0%, #EAC696 50%, #ffffff 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-title-alt {
+    background: linear-gradient(to right, #ffffff 25%, #EAC696 50%, #ffffff 75%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .wordmark-light { filter: brightness(0) invert(1) sepia(.18) saturate(1.3) drop-shadow(0 2px 10px rgba(0,0,0,.6)); }
+
+  /* grão de película, para tirar o ar digital às superfícies escuras */
+  .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+  /* a fotografia da abertura assenta devagar */
+  @keyframes settle { from { transform: scale(1.08); } to { transform: scale(1); } }
+  .hero-photo { animation: settle 2.6s cubic-bezier(.2,.7,.2,1) both; }
+
+  /* entradas */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+    to   { opacity: 1; transform: none; filter: blur(0); }
+  }
+  .intro { opacity: 0; animation: fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards; }
+  .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px);
+            transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1), filter .9s ease; }
+  .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .intro, .reveal, .hero-photo { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* botão principal com brilho */
+  .btn-glow { position: relative; isolation: isolate; }
+  .btn-glow::after { content: ""; position: absolute; left: 50%; bottom: -12px; width: 11rem; height: 1.5rem;
+    transform: translateX(-50%); border-radius: 999px; opacity: 0; transition: opacity .3s ease; z-index: -1;
+    background: radial-gradient(60% 100% at 50% 50%, rgba(234,198,150,.55), rgba(234,198,150,.25) 35%, transparent 70%);
+    filter: blur(10px); }
+  .btn-glow:hover::after { opacity: 1; }
+  .btn-glow .line { position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px;
+    background: linear-gradient(to right, transparent, #EAC696, transparent); transition: left .5s ease, right .5s ease; }
+  .btn-glow:hover .line { left: 0; right: 0; }
+</style>
+</head>
+
+<body class="min-h-screen antialiased overflow-x-hidden text-white bg-noite font-sans">
+
+  <!-- Fundo fixo: noite quente, com luz terracota e dourada -->
+  <div class="fixed inset-0 -z-10 grain" aria-hidden="true"
+       style="background:
+         radial-gradient(60% 50% at 12% 18%, rgba(201,130,79,.16), transparent 70%),
+         radial-gradient(55% 45% at 88% 62%, rgba(234,198,150,.10), transparent 70%),
+         radial-gradient(70% 60% at 40% 110%, rgba(157,181,154,.08), transparent 70%),
+         #120d0a;"></div>
+
+  <!-- Navegação -->
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex h-24 items-center justify-between">
+        <a href="#" class="flex items-center gap-3" aria-label="Equilibra, início">
+          <img src="img/lotus.png" alt="" class="h-12 w-auto drop-shadow-[0_2px_12px_rgba(0,0,0,.6)]">
+          <img src="img/wordmark.png" alt="Equilibra" class="h-11 w-auto wordmark-light">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Principal">
+          <a href="#areas" class="text-sm text-white/80 hover:text-white transition">O programa</a>
+          <a href="#inclui" class="text-sm text-white/80 hover:text-white transition">O que inclui</a>
+          <a href="#calendario" class="text-sm text-white/80 hover:text-white transition">Calendário</a>
+          <a href="#quem" class="text-sm text-white/80 hover:text-white transition">Quem acompanha</a>
+          <a href="#valor" class="text-sm text-white/80 hover:text-white transition">Datas e valor</a>
+          <a href="#candidatura" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur hover:bg-white/15 transition">Avisem-me em janeiro</a>
+        </nav>
+
+        <button id="menu-btn" class="lg:hidden inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur hover:bg-white/15 transition" aria-expanded="false" aria-controls="menu">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu móvel -->
+    <div id="menu" class="lg:hidden fixed inset-0 z-50 bg-noite/95 backdrop-blur-xl opacity-0 invisible transition-all duration-300">
+      <div class="flex h-full flex-col px-6 pt-6 pb-8">
+        <div class="flex justify-end mb-8">
+          <button id="menu-close" class="rounded-full border border-white/10 bg-white/10 p-3" aria-label="Fechar menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="m18 6-12 12M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="flex-1 space-y-6" aria-label="Menu móvel">
+          <a href="#areas" class="block text-2xl text-white/80 hover:text-white">O programa</a>
+          <a href="#inclui" class="block text-2xl text-white/80 hover:text-white">O que inclui</a>
+          <a href="#calendario" class="block text-2xl text-white/80 hover:text-white">Calendário</a>
+          <a href="#quem" class="block text-2xl text-white/80 hover:text-white">Quem acompanha</a>
+          <a href="#valor" class="block text-2xl text-white/80 hover:text-white">Datas e valor</a>
+          <div class="mt-12 border-t border-white/10 pt-8">
+            <a href="#candidatura" class="flex w-full justify-center rounded-full border border-white/10 bg-white/10 px-6 py-3 text-base text-white/90">Avisem-me em janeiro</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Abertura -->
+    <section class="relative z-20 flex min-h-[100svh] flex-col justify-end overflow-hidden">
+      <!-- Fotografia da abertura: rostos visíveis em cima, texto assente na parte escura -->
+      <div class="absolute inset-0 -z-10 grain" aria-hidden="true">
+        <img src="img/grupo-circulo.jpg" alt="" class="hero-photo h-full w-full object-cover object-[50%_30%]">
+        <div class="absolute inset-0 bg-[#3a2212]/25 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-noite via-noite/80 via-45% to-noite/10"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-noite/70 via-noite/10 to-transparent"></div>
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-noite/80 to-transparent"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto w-full px-6 lg:px-8 pt-40 pb-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+          <div class="lg:col-span-7">
+            <p class="intro inline-flex items-center gap-2 text-[11px] uppercase tracking-[.22em] text-ouro" style="animation-delay:.1s">
+              <span class="h-px w-8 bg-ouro/60"></span>Programa online de saúde integrada
+            </p>
+            <h1 class="intro gradient-title mt-5 text-[3.6rem] sm:text-7xl lg:text-[7.25rem] font-semibold tracking-tighter leading-[0.92]" style="animation-delay:.25s">Mais do que perder peso.</h1>
+            <p class="intro mt-5 text-2xl sm:text-3xl font-light tracking-tight text-white/85" style="animation-delay:.45s">Cuidar da saúde como um todo.</p>
+          </div>
+
+          <div class="lg:col-span-5 lg:pb-2">
+            <p class="intro text-lg leading-relaxed text-white/85" style="animation-delay:.6s">Três meses em que Nutrição, Psicologia e Movimento trabalham juntas, semana a semana, para compreenderes a tua relação com a comida e construíres hábitos que ficam.</p>
+
+            <div class="intro mt-7 flex flex-wrap items-center gap-x-6 gap-y-4" style="animation-delay:.75s">
+              <a href="#candidatura" class="btn-glow group inline-flex items-center gap-2 overflow-hidden rounded-full bg-ouro px-6 py-3 font-medium text-noite shadow-[0_8px_30px_-8px_rgba(234,198,150,.55)] hover:bg-[#f1d4ab] active:scale-[0.98] transition">
+                Avisem-me em janeiro
+                <svg class="h-5 w-5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#areas" class="text-sm text-white/75 hover:text-white underline underline-offset-4 decoration-white/25 hover:decoration-white">Ver o programa</a>
+            </div>
+
+            <div class="intro mt-8 flex items-center gap-4" style="animation-delay:.9s">
+              <div class="flex -space-x-3 shrink-0">
+                <img src="img/avatar-sara.jpg" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-noite">
+                <img src="img/avatar-lisa.jpg" alt="" class="h-12 w-12 rounded-full object-cover ring-2 ring-noite">
+              </div>
+              <p class="text-sm leading-snug text-white/70"><span class="font-medium text-white">Sara Lucas e Lisa Bompastor</span><br>Nutricionista e psicoterapeuta, lado a lado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factos da 1.ª edição -->
+        <dl class="intro mt-14 grid grid-cols-2 lg:grid-cols-4 border-t border-white/15" style="animation-delay:1.05s">
+          <div class="py-5 pr-4 border-b border-white/10 lg:border-b-0">
+            <dt class="text-[11px] uppercase tracking-[.18em] text-white/50">1.ª edição</dt>
+            <dd class="mt-1.5 text-white">10 fev a 10 mai 2027</dd>
+          </div>
+          <div class="py-5 pl-4 lg:pl-6 border-l border-b border-white/10 lg:border-b-0">
+            <dt class="text-[11px] uppercase tracking-[.18em] text-white/50">Grupo</dt>
+            <dd class="mt-1.5 text-white">8 a 14 pessoas</dd>
+          </div>
+          <div class="py-5 pr-4 lg:pl-6 lg:border-l border-white/10">
+            <dt class="text-[11px] uppercase tracking-[.18em] text-white/50">Formato</dt>
+            <dd class="mt-1.5 text-white">Online, em direto</dd>
+          </div>
+          <div class="py-5 pl-4 lg:pl-6 border-l border-white/10">
+            <dt class="text-[11px] uppercase tracking-[.18em] text-white/50">Candidaturas</dt>
+            <dd class="mt-1.5 text-white">Abrem em janeiro</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Três áreas -->
+    <section id="areas" class="relative z-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-widest text-white/80">
+            <img src="img/lotus.png" alt="" class="h-3.5 w-auto"> Saúde integrada
+          </span>
+          <h2 class="reveal gradient-title-alt mt-4 text-3xl sm:text-5xl font-semibold tracking-tight">Três áreas, um só programa</h2>
+          <p class="reveal mt-3 leading-relaxed text-white/80">Não é um plano alimentar igual para todos nem um desafio de emagrecimento. É um acompanhamento integrado, com respeito pelo teu corpo e pelo teu ritmo.</p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="img/sara-retrato.jpg" alt="Sara Lucas, nutricionista, de camisa preta, a sorrir" class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-6 pt-28 bg-gradient-to-t from-black/95 via-black/75 to-transparent">
+              <p class="text-xs uppercase tracking-widest text-sara">Com a Sara</p>
+              <h3 class="mt-1 text-2xl font-semibold tracking-tight">Nutrição</h3>
+              <p class="mt-2 text-sm text-white/80">Hábitos alimentares, metabolismo e estratégias à tua medida, sem planos iguais para todos.</p>
+            </div>
+          </article>
+
+          <article class="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5" style="transition-delay:.1s">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="img/espaco-consulta.jpg" alt="Duas cadeiras de vime frente a frente, com uma planta e luzes ao centro, no espaço de consulta da Lisa" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-6 pt-28 bg-gradient-to-t from-black/95 via-black/75 to-transparent">
+              <p class="text-xs uppercase tracking-widest text-ouro">Com a Lisa</p>
+              <h3 class="mt-1 text-2xl font-semibold tracking-tight">Psicologia</h3>
+              <p class="mt-2 text-sm text-white/80">A relação com a comida e com o corpo, os padrões emocionais e a motivação para mudar.</p>
+            </div>
+          </article>
+
+          <article class="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5" style="transition-delay:.2s">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="img/lisa-movimento.jpg" alt="Mulher de braços abertos num movimento lento e consciente" class="h-full w-full object-cover object-left transition-transform duration-700 group-hover:scale-105">
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-6 pt-28 bg-gradient-to-t from-black/95 via-black/75 to-transparent">
+              <p class="text-xs uppercase tracking-widest text-ouro">Com a Lisa e a Sara</p>
+              <h3 class="mt-1 text-2xl font-semibold tracking-tight">Movimento</h3>
+              <p class="mt-2 text-sm text-white/80">A Lisa traz o corpo e o movimento para o trabalho psicológico. A Sara orienta dois treinos por semana, em direto e gravados.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que inclui -->
+    <section id="inclui" class="relative z-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-widest text-white/80">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            O que inclui
+          </span>
+          <h2 class="reveal gradient-title-alt mt-4 text-3xl sm:text-5xl font-semibold tracking-tight">Três meses de acompanhamento</h2>
+          <p class="reveal mt-3 leading-relaxed text-white/80">Sessões individuais, treinos e encontros de grupo, com uma plataforma e um espaço privado para não fazeres este caminho sem apoio.</p>
+        </div>
+
+        <div class="reveal mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 transition-colors">
+            <p class="text-5xl font-semibold tracking-tighter text-ouro">6</p>
+            <p class="mt-3 font-medium tracking-tight">Sessões individuais</p>
+            <p class="mt-1 text-sm text-white/70">3 consultas de nutrição com a Sara e 3 sessões de psicologia com a Lisa.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 transition-colors">
+            <p class="text-5xl font-semibold tracking-tighter text-ouro">24</p>
+            <p class="mt-3 font-medium tracking-tight">Treinos com a Sara</p>
+            <p class="mt-1 text-sm text-white/70">Dois por semana, de 60 minutos, online e em direto. Ficam gravados.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 transition-colors">
+            <p class="text-5xl font-semibold tracking-tighter text-ouro">12</p>
+            <p class="mt-3 font-medium tracking-tight">Encontros de grupo</p>
+            <p class="mt-1 text-sm text-white/70">À quinta-feira, às 21h, 45 minutos para aprender, refletir e partilhar.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 transition-colors">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M12 11h4M12 16h4M8 11h.01M8 16h.01"/></svg>
+            </div>
+            <p class="mt-3 font-medium tracking-tight">Plataforma de acompanhamento</p>
+            <p class="mt-1 text-sm text-white/70">Questionários e relatório inicial, planos e materiais à tua medida, gravações, desafios e check-ins.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 transition-colors">
+            <div class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p class="mt-3 font-medium tracking-tight">Acompanhamento contínuo</p>
+            <p class="mt-1 text-sm text-white/70">Um espaço privado de apoio e partilha durante os três meses.</p>
+          </div>
+          <div class="relative overflow-hidden rounded-xl border border-white/10 min-h-[12rem]">
+            <img src="img/espaco-luz.jpg" alt="" class="absolute inset-0 h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10"></div>
+            <div class="relative flex h-full flex-col justify-end p-6">
+              <p class="font-medium tracking-tight">Um grupo pequeno</p>
+              <p class="mt-1 text-sm text-white/80">Entre 8 e 14 pessoas, para que cada uma tenha espaço.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Três fases -->
+    <section id="fases" class="relative z-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="reveal text-xs uppercase tracking-widest text-white/60">O método</p>
+          <h2 class="reveal gradient-title-alt mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">Um mês para cada fase</h2>
+        </div>
+        <ol class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <li class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <p class="text-sm text-ouro">Mês 1</p>
+            <h3 class="mt-2 text-xl font-semibold tracking-tight">Conhecer &amp; Compreender</h3>
+            <p class="mt-2 text-sm text-white/75">Explorar hábitos, alimentação, emoções e necessidades individuais.</p>
+          </li>
+          <li class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur" style="transition-delay:.1s">
+            <p class="text-sm text-ouro">Mês 2</p>
+            <h3 class="mt-2 text-xl font-semibold tracking-tight">Experimentar &amp; Transformar</h3>
+            <p class="mt-2 text-sm text-white/75">Experimentar estratégias práticas, trabalhar a motivação e construir novas rotinas.</p>
+          </li>
+          <li class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur" style="transition-delay:.2s">
+            <p class="text-sm text-ouro">Mês 3</p>
+            <h3 class="mt-2 text-xl font-semibold tracking-tight">Integrar &amp; Sustentar</h3>
+            <p class="mt-2 text-sm text-white/75">Consolidar mudanças, fortalecer a autonomia e preparar a continuidade.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Calendário -->
+    <section id="calendario" class="relative z-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 items-start">
+          <div class="reveal lg:sticky lg:top-10">
+            <p class="text-xs uppercase tracking-widest text-white/60">Encontros de grupo</p>
+            <h2 class="gradient-title-alt mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">Doze quintas-feiras, às 21h</h2>
+            <p class="mt-4 leading-relaxed text-white/80">A Sara e a Lisa alternam, semana a semana. Começam juntas e acabam juntas. Os horários dos treinos e das sessões individuais combinam-se contigo.</p>
+            <div class="mt-6 flex flex-wrap gap-3 text-xs">
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1"><span class="h-2 w-2 rounded-full bg-sara"></span>Sara · Nutrição</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1"><span class="h-2 w-2 rounded-full bg-ouro"></span>Lisa · Psicologia e Movimento</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1"><span class="h-2 w-2 rounded-full bg-gradient-to-r from-sara to-ouro"></span>As duas</span>
+            </div>
+          </div>
+
+          <ol id="cal" class="reveal divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5 backdrop-blur"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem acompanha -->
+    <section id="quem" class="relative z-20 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="reveal text-xs uppercase tracking-widest text-white/60">Quem acompanha</p>
+          <h2 class="reveal gradient-title-alt mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">Sara Lucas e Lisa Bompastor</h2>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Sara -->
+          <article class="reveal grid grid-cols-1 sm:grid-cols-[minmax(0,14rem)_1fr] gap-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10">
+              <img src="img/sara-retrato.jpg" alt="Sara Lucas, nutricionista, de camisa preta, a sorrir" class="h-full w-full object-cover object-top">
+              <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-black/45 px-2 py-1 text-[11px] text-white/90 backdrop-blur">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z"/><path d="m9 12 2 2 4-4"/></svg>
+                Cédula 2439N
+              </span>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-sara">Nutrição e Treino</p>
+              <h3 class="mt-1 text-2xl font-semibold tracking-tight">Sara Lucas</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Nutricionista e personal trainer. Começou na nutrição pediátrica e dedica-se hoje à nutrição funcional e integrativa, como caminho para uma saúde plena e para o cuidado de si.</p>
+              <ul class="mt-5 space-y-2 text-sm text-white/85">
+                <li class="flex gap-2"><span class="text-sara">·</span>Licenciada pela Universidade do Porto, em 2013</li>
+                <li class="flex gap-2"><span class="text-sara">·</span>Nutricionista com cédula profissional 2439N</li>
+                <li class="flex gap-2"><span class="text-sara">·</span>Nutrição funcional e integrativa</li>
+                <li class="flex gap-2"><span class="text-sara">·</span>Personal trainer: orienta os 24 treinos do programa</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Lisa -->
+          <article class="reveal grid grid-cols-1 sm:grid-cols-[minmax(0,14rem)_1fr] gap-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur" style="transition-delay:.1s">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10">
+              <img src="img/lisa-abraco.jpg" alt="Lisa Bompastor, a sorrir, num abraço durante um workshop" class="h-full w-full object-cover object-[65%_30%]">
+              <span class="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-black/45 px-2 py-1 text-[11px] text-white/90 backdrop-blur">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.2 0-2.4.6-3 1.7A3.6 3.6 0 0 0 4.6 9c-1 .6-1.7 1.8-1.7 3s.7 2.4 1.7 3c-.3 1.2 0 2.5 1 3.4.8.8 2.1 1.2 3.3 1 .6 1 1.8 1.6 3 1.6s2.4-.6 3-1.7c1.2.3 2.5 0 3.4-1 .8-.8 1.2-2 1-3.3 1-.6 1.6-1.8 1.6-3s-.6-2.4-1.7-3c.3-1.2 0-2.5-1-3.4a3.7 3.7 0 0 0-3.3-1c-.6-1-1.8-1.6-3-1.6Z"/><path d="m9 12 2 2 4-4"/></svg>
+                Cédula OPP n.º [por confirmar]
+              </span>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-widest text-ouro">Psicologia e Movimento</p>
+              <h3 class="mt-1 text-2xl font-semibold tracking-tight">Lisa Bompastor</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/75">Psicoterapeuta, especializada em Dança Movimento Terapia. Acompanha pessoas de várias idades, em individual e em grupo, no Porto, em Lisboa e em Barcelona.</p>
+              <ul class="mt-5 space-y-2 text-sm text-white/85">
+                <li class="flex gap-2"><span class="text-ouro">·</span>Psicóloga com cédula profissional da OPP n.º [por confirmar]</li>
+                <li class="flex gap-2"><span class="text-ouro">·</span>Licenciada em Psicologia, com especialização em Psicoterapias Expressivas</li>
+                <li class="flex gap-2"><span class="text-ouro">·</span>Mestrado em Dança Movimento Terapia, em Barcelona</li>
+                <li class="flex gap-2"><span class="text-ouro">·</span>Cursos e workshops de Dança Movimento Terapia desde 2005</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal mt-8 grid grid-cols-2 gap-6">
+          <div class="overflow-hidden rounded-2xl border border-white/10">
+            <img src="img/espaco-buda.jpg" alt="Canto do espaço de consulta, com uma secretária de madeira, uma almofada dourada e uma figura em meditação" class="aspect-[4/3] w-full object-cover">
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-white/10">
+            <img src="img/grupo-circulo.jpg" alt="Um grupo de mulheres em círculo, abraçadas, numa sala de movimento" class="aspect-[4/3] w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Datas e valor -->
+    <section id="valor" class="relative z-20 bg-black/40 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-20">
+        <div class="mb-10 text-center">
+          <h2 class="reveal gradient-title-alt text-3xl sm:text-4xl font-semibold tracking-tight">1.ª edição: datas e valor</h2>
+          <p class="reveal mt-2 text-white/80">De 10 de fevereiro a 10 de maio de 2027, online. Condições especiais da 1.ª edição.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div class="reveal relative rounded-2xl border-2 border-ouro/40 bg-white/10 p-6 backdrop-blur">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-ouro px-3 py-1 text-xs font-medium uppercase tracking-wider text-noite">Pagamento único</span>
+            <p class="text-lg font-medium tracking-tight">Programa completo</p>
+            <p class="mt-3 text-4xl font-semibold tracking-tight">480 €</p>
+            <p class="mt-1 text-sm text-white/70">Poupas 45 € em relação às prestações.</p>
+            <ul class="mt-5 space-y-2 text-sm">
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ouro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>6 sessões individuais</li>
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ouro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>24 treinos em direto e gravados</li>
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ouro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>12 encontros de grupo</li>
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-ouro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Plataforma e acompanhamento contínuo</li>
+            </ul>
+            <a href="#candidatura" class="mt-6 flex w-full justify-center rounded-full bg-ouro px-4 py-3 text-sm font-medium text-noite hover:bg-ouro/90 transition">Avisem-me em janeiro</a>
+          </div>
+
+          <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur" style="transition-delay:.1s">
+            <p class="text-lg font-medium tracking-tight">Em três prestações</p>
+            <p class="mt-3 text-4xl font-semibold tracking-tight">3 × 175 €</p>
+            <p class="mt-1 text-sm text-white/70">Total de 525 €.</p>
+            <ul class="mt-5 space-y-2 text-sm text-white/90">
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Tudo o que o programa inclui</li>
+              <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>O mesmo programa, com o pagamento repartido</li>
+            </ul>
+            <a href="#candidatura" class="mt-6 flex w-full justify-center rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-white/90 hover:bg-white/10 transition">Avisem-me em janeiro</a>
+          </div>
+        </div>
+
+        <p class="reveal mt-8 text-center text-sm text-white/70 max-w-2xl mx-auto">A participação está sujeita a uma avaliação de adequação. Os resultados variam de pessoa para pessoa e dependem das necessidades e circunstâncias individuais.</p>
+      </div>
+    </section>
+
+    <!-- Candidatura -->
+    <section id="candidatura" class="relative z-20 border-t border-white/10 bg-black/50 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div class="reveal">
+            <p class="text-xs uppercase tracking-widest text-white/60">Candidatura</p>
+            <h2 class="gradient-title-alt mt-3 text-3xl sm:text-5xl font-semibold tracking-tight">As candidaturas abrem em janeiro</h2>
+            <ol class="mt-8 space-y-4">
+              <li class="flex gap-4"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-sm text-ouro">1</span><p class="text-white/85"><strong class="font-medium text-white">Candidatas-te</strong> a partir de janeiro de 2027.</p></li>
+              <li class="flex gap-4"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-sm text-ouro">2</span><p class="text-white/85"><strong class="font-medium text-white">Avaliação de adequação</strong>, para perceber se este é o programa certo para ti, neste momento.</p></li>
+              <li class="flex gap-4"><span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-sm text-ouro">3</span><p class="text-white/85"><strong class="font-medium text-white">Lugar confirmado</strong> e começamos a 10 de fevereiro.</p></li>
+            </ol>
+          </div>
+
+          <form id="aviso" class="reveal rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur" novalidate>
+            <p class="text-lg font-medium tracking-tight">Avisem-me em janeiro</p>
+            <p class="mt-1 text-sm text-white/70">Deixa o teu email e avisamos-te quando abrirem as candidaturas.</p>
+            <label for="nome" class="mt-6 block text-sm text-white/80">Nome</label>
+            <input id="nome" name="nome" autocomplete="given-name" class="mt-1 w-full rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-ouro/50" placeholder="O teu nome">
+            <label for="email" class="mt-4 block text-sm text-white/80">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-ouro/50" placeholder="nome@email.com">
+            <label class="mt-4 flex items-start gap-3 text-xs text-white/70">
+              <input type="checkbox" required class="mt-0.5 h-4 w-4 accent-[#EAC696]">
+              Aceito receber este aviso por email e li a política de privacidade.
+            </label>
+            <button class="mt-6 w-full rounded-full bg-ouro px-4 py-3 text-sm font-medium text-noite hover:bg-ouro/90 transition">Avisem-me</button>
+            <p id="aviso-msg" class="mt-3 hidden text-sm text-ouro" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative z-20 border-t border-white/10 bg-black/60 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="inline-block rounded-xl bg-[#fbf7f2] p-3">
+            <img src="img/lockup.png" alt="Equilibra, Nutrição, Psicologia e Movimento, com Sara Lucas e Lisa Bompastor" class="h-16 w-auto">
+          </div>
+          <p class="mt-4 text-sm text-white/70">Programa online de saúde integrada. Mais do que perder peso: cuidar da saúde como um todo.</p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-white/60">Navegação</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#areas" class="text-white/80 hover:text-white">O programa</a></li>
+            <li><a href="#inclui" class="text-white/80 hover:text-white">O que inclui</a></li>
+            <li><a href="#calendario" class="text-white/80 hover:text-white">Calendário</a></li>
+            <li><a href="#valor" class="text-white/80 hover:text-white">Datas e valor</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-white/60">Contacto</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#" class="text-white/80 hover:text-white">[Email do Equilibra]</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white">[Instagram]</a></li>
+            <li><a href="https://www.lisabompastor.com" target="_blank" rel="noopener" class="text-white/80 hover:text-white">Lisa Bompastor</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-white/60">Legal</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#" class="text-white/80 hover:text-white">Política de privacidade</a></li>
+            <li><a href="#" class="text-white/80 hover:text-white">Termos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-white/10 pt-6">
+        <p class="text-xs text-white/60">© 2026 Equilibra · Sara Lucas e Lisa Bompastor. Fotografias: Lisa Bompastor.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // Calendário dos encontros
+  const encontros = [
+    ['11 fev', 'Abertura', 'ambas'],
+    ['18 fev', 'Saúde metabólica e alimentação', 'sara'],
+    ['25 fev', 'Emoções e relação com a comida', 'lisa'],
+    ['4 mar', 'Hábitos alimentares', 'sara'],
+    ['11 mar', 'Padrões e comportamentos', 'lisa'],
+    ['18 mar', 'Bem-estar digestivo e inchaço', 'sara'],
+    ['25 mar', 'Pausa, sem encontro', 'pausa'],
+    ['1 abr', 'Motivação e mudança', 'lisa'],
+    ['8 abr', 'Nutrição e energia', 'sara'],
+    ['15 abr', 'Relação com o corpo e autocuidado', 'lisa'],
+    ['22 abr', 'Autonomia alimentar', 'sara'],
+    ['29 abr', 'Sustentar novos hábitos', 'lisa'],
+    ['6 mai', 'Integração e encerramento', 'ambas'],
+  ];
+  const quem = {
+    sara:  ['Sara', 'bg-sara'],
+    lisa:  ['Lisa', 'bg-ouro'],
+    ambas: ['Sara e Lisa', 'bg-gradient-to-r from-sara to-ouro'],
+  };
+  document.getElementById('cal').innerHTML = encontros.map(([data, tema, q]) => {
+    if (q === 'pausa') return `<li class="flex items-center gap-4 px-5 py-3 text-sm text-white/45"><span class="w-14 shrink-0 tabular-nums">${data}</span><span class="italic">${tema}</span></li>`;
+    const [nome, cor] = quem[q];
+    return `<li class="flex items-center gap-4 px-5 py-4">
+      <span class="w-14 shrink-0 text-sm tabular-nums text-white/60">${data}</span>
+      <span class="flex-1 font-medium tracking-tight">${tema}</span>
+      <span class="inline-flex shrink-0 items-center gap-2 text-xs text-white/75"><span class="h-2 w-2 rounded-full ${cor}"></span>${nome}</span>
+    </li>`;
+  }).join('');
+
+  // Entradas ao fazer scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Menu móvel
+  const menu = document.getElementById('menu'), btn = document.getElementById('menu-btn');
+  function setMenu(open) {
+    menu.classList.toggle('opacity-0', !open); menu.classList.toggle('invisible', !open);
+    btn.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', () => setMenu(true));
+  document.getElementById('menu-close').addEventListener('click', () => setMenu(false));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  // Formulário (ainda sem serviço de email ligado)
+  document.getElementById('aviso').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target, msg = document.getElementById('aviso-msg');
+    msg.classList.remove('hidden');
+    msg.textContent = f.checkValidity()
+      ? 'Obrigada! Em janeiro, avisamos-te. (Pré-visualização: o formulário ainda não envia nada.)'
+      : 'Falta o email ou a autorização.';
+  });
+</script>
+</body>
+</html>
