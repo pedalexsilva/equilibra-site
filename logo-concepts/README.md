@@ -1,6 +1,6 @@
 # Equilibra · propostas de logótipo
 
-Duas rondas: a primeira (A–D, nesta pasta) explora caminhos gráficos; a segunda (E–H, em `ronda-2/`) segue as referências em aguarela da Lisa.
+Três rondas: a primeira (A–D, nesta pasta) explora caminhos gráficos; a segunda (E–H, em `ronda-2/`) segue as referências em aguarela da Lisa; a terceira (I–L, em `ronda-3/`) sai de propósito das duas anteriores.
 
 Quatro propostas para o logótipo da Equilibra (Nutrição · Psicologia · Movimento, com Sara Lucas e Lisa Bompastor), desenhadas a partir do briefing de identidade e só com a paleta V1:
 `#FAF7F2` `#F1E6D8` `#DDC3A8` `#D8AB94` `#C9BEB2` `#9DA17A` `#76543E`.
@@ -42,6 +42,19 @@ Nome em Cormorant Garamond (maiúsculas), nomes em itálico, três áreas em Alb
 
 Ficheiros por proposta: `*-vertical` (principal), `*-horizontal`, `*-compacto`, `*-simbolo`, `*-simbolo-plano` (favicon, sem aguarela), `*-vertical-mono`, `*-horizontal-mono`, `*-simbolo-mono` (uma cor), `*-horizontal-inverso`. A aguarela usa transparências, mistura «multiply» e um filtro de textura em SVG, que alguns programas (Canva, Word, alguns visualizadores) não mostram bem. Por isso há também `*-vertical.png` e `*-horizontal.png` com fundo transparente.
 
+## Terceira ronda · outros caminhos (`ronda-3/`)
+
+Visão geral: `ronda-3/equilibra-ronda-3.png`. Mesma paleta, sem folhas, flores, aguarela nem serifas delicadas.
+
+| | Proposta | Ideia | Letra |
+|---|---|---|---|
+| I | Construção (`i-construcao-*`) | Círculo e quadrado numa barra sobre um semicírculo que baloiça; os pesos estão calculados (momentos iguais em torno do centro) | Jost |
+| J | Aequus (`j-aequus-*`) | EQUI / LIBRA (latim: igual + balança) em duas linhas com a mesma largura; o favicon é o sinal de igual | Archivo ExtraBold, largura 109 e 84 |
+| K | Nível (`k-nivel-*`) | Nível de bolha com a bolha entre as marcas | Figtree |
+| L | Azulejo (`l-azulejo-*`) | Azulejo de quartos de círculo que se repete em padrão | Bricolage Grotesque |
+
+Ficheiros por proposta: `*-horizontal`, `*-compacto`, `*-vertical`, `*-simbolo`, `*-vertical-mono`, `*-horizontal-mono`, `*-simbolo-mono`, `*-horizontal-inverso`, `*-simbolo-inverso`.
+
 ## Regenerar
 
-`fonte/build.py` gera os SVG da primeira ronda e `fonte/build_ronda2.py` os da segunda. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`) numa pasta `fonte/fonts/`.
+`fonte/build.py` gera os SVG da primeira ronda , `fonte/build_ronda2.py` os da segunda e `fonte/build_ronda3.py` os da terceira. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`, e para a terceira ronda `Jost[wght].ttf`, `Archivo[wdth,wght].ttf`, `Figtree[wght].ttf`, `BricolageGrotesque[opsz,wdth,wght].ttf`) numa pasta `fonte/fonts/`.
