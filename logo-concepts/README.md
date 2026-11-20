@@ -1,5 +1,7 @@
 # Equilibra · propostas de logótipo
 
+Duas rondas: a primeira (A–D, nesta pasta) explora caminhos gráficos; a segunda (E–H, em `ronda-2/`) segue as referências em aguarela da Lisa.
+
 Quatro propostas para o logótipo da Equilibra (Nutrição · Psicologia · Movimento, com Sara Lucas e Lisa Bompastor), desenhadas a partir do briefing de identidade e só com a paleta V1:
 `#FAF7F2` `#F1E6D8` `#DDC3A8` `#D8AB94` `#C9BEB2` `#9DA17A` `#76543E`.
 
@@ -25,6 +27,21 @@ Cores por área, iguais em B, C e D: verde-oliva para a Nutrição, pêssego par
 
 São propostas para escolher, não ficheiros finais. Depois da escolha falta afinar o espaçamento, desenhar o favicon simplificado e validar as letras (todas com licença SIL Open Font).
 
+## Segunda ronda · aguarela (`ronda-2/`)
+
+Visão geral: `ronda-2/equilibra-ronda-2.png`.
+
+| | Proposta | Ideia |
+|---|---|---|
+| E | Flor (`e-flor-*`) | Sete folhas transparentes em flor de lótus, do pêssego ao verde-oliva, com eixo de pontos; sem balança |
+| F | Selo (`f-selo-*`) | Selo circular com pétalas, folhas no eixo e uma balança em fio fino ao centro |
+| G | Horizonte (`g-horizonte-*`) | Sol pêssego entre dois montes, com uma linha contínua em oito deitado |
+| H | Encontro (`h-encontro-*`) | Três pétalas, uma por área, que se cruzam ao centro |
+
+Nome em Cormorant Garamond (maiúsculas), nomes em itálico, três áreas em Albert Sans. Os fios «dourados» das referências são o castanho da paleta em transparência.
+
+Ficheiros por proposta: `*-vertical` (principal), `*-horizontal`, `*-compacto`, `*-simbolo`, `*-simbolo-plano` (favicon, sem aguarela), `*-vertical-mono`, `*-horizontal-mono`, `*-simbolo-mono` (uma cor), `*-horizontal-inverso`. A aguarela usa transparências, mistura «multiply» e um filtro de textura em SVG, que alguns programas (Canva, Word, alguns visualizadores) não mostram bem. Por isso há também `*-vertical.png` e `*-horizontal.png` com fundo transparente.
+
 ## Regenerar
 
-`fonte/build.py` gera todos os SVG. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`) numa pasta `fonte/fonts/`.
+`fonte/build.py` gera os SVG da primeira ronda e `fonte/build_ronda2.py` os da segunda. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`) numa pasta `fonte/fonts/`.
