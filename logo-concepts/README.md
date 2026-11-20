@@ -1,6 +1,6 @@
 # Equilibra · propostas de logótipo
 
-Três rondas: a primeira (A–D, nesta pasta) explora caminhos gráficos; a segunda (E–H, em `ronda-2/`) segue as referências em aguarela da Lisa; a terceira (I–L, em `ronda-3/`) sai de propósito das duas anteriores.
+Quatro rondas: a primeira (A–D, nesta pasta) explora caminhos gráficos; a segunda (E–H, em `ronda-2/`) segue as referências em aguarela da Lisa; a terceira (I–L, em `ronda-3/`) sai de propósito das duas anteriores; a quarta (M–P, em `ronda-4/`) traz mais quatro caminhos novos.
 
 Quatro propostas para o logótipo da Equilibra (Nutrição · Psicologia · Movimento, com Sara Lucas e Lisa Bompastor), desenhadas a partir do briefing de identidade e só com a paleta V1:
 `#FAF7F2` `#F1E6D8` `#DDC3A8` `#D8AB94` `#C9BEB2` `#9DA17A` `#76543E`.
@@ -55,6 +55,19 @@ Visão geral: `ronda-3/equilibra-ronda-3.png`. Mesma paleta, sem folhas, flores,
 
 Ficheiros por proposta: `*-horizontal`, `*-compacto`, `*-vertical`, `*-simbolo`, `*-vertical-mono`, `*-horizontal-mono`, `*-simbolo-mono`, `*-horizontal-inverso`, `*-simbolo-inverso`.
 
+## Quarta ronda (`ronda-4/`)
+
+Visão geral: `ronda-4/equilibra-ronda-4.png`.
+
+| | Proposta | Ideia | Letra |
+|---|---|---|---|
+| M | Duas faces (`m-faces-*`) | Dois perfis frente a frente; entre eles forma-se um vaso de onde nasce um rebento (figura e fundo) | Instrument Serif |
+| N | Assinatura (`n-assinatura-*`) | Nome manuscrito com traço nivelado e ponto pêssego de apoio; símbolo é o «e» no traço | Ms Madi + Albert Sans |
+| O | Anos 70 (`o-arcos-*`) | Três arcos concêntricos sobre uma linha, com um sol ao centro | Caprasimo + Albert Sans |
+| P | Recortes (`p-recortes-*`) | Folha ondulada, sol e pedra em papel recortado, em equilíbrio assimétrico | Syne |
+
+Mesmos tipos de ficheiro da terceira ronda.
+
 ## Regenerar
 
-`fonte/build.py` gera os SVG da primeira ronda , `fonte/build_ronda2.py` os da segunda e `fonte/build_ronda3.py` os da terceira. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`, e para a terceira ronda `Jost[wght].ttf`, `Archivo[wdth,wght].ttf`, `Figtree[wght].ttf`, `BricolageGrotesque[opsz,wdth,wght].ttf`) numa pasta `fonte/fonts/`.
+`fonte/build.py` gera os SVG da primeira ronda , `fonte/build_ronda2.py` os da segunda , `fonte/build_ronda3.py` os da terceira e `fonte/build_ronda4.py` os da quarta. Precisa de `pip install fonttools uharfbuzz` e dos ficheiros variáveis do Google Fonts (`CormorantGaramond[wght].ttf`, `CormorantGaramond-Italic[wght].ttf`, `Fraunces[SOFT,WONK,opsz,wght].ttf`, `AlbertSans[wght].ttf`, e para a terceira ronda `Jost[wght].ttf`, `Archivo[wdth,wght].ttf`, `Figtree[wght].ttf`, `BricolageGrotesque[opsz,wdth,wght].ttf`, e para a quarta `InstrumentSerif-Regular.ttf`, `MsMadi-Regular.ttf`, `Caprasimo-Regular.ttf`, `Syne[wght].ttf`) numa pasta `fonte/fonts/`.
